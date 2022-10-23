@@ -1,8 +1,7 @@
-import asyncio
-from functools import partial
-
+import time
 from fastapi import FastAPI
 from fastapi import WebSocket
+from starlette.responses import StreamingResponse
 from starlette.websockets import WebSocketDisconnect
 
 from music import get_song
@@ -27,5 +26,13 @@ async def websocket_endpoint(websocket: WebSocket):
         await websocket.send_text('song sent!')
 
 
-def stream_song(song_public_id: str, buffer_size: int = 1024):
-    return {"message": f"Hello {song_public_id}"}
+@app.get('/audio')
+def get_audio():
+
+    def iter_file():
+        with get_song('Here Comes A Big Black Cloud!! - Graverobbin.mp3', CHUNK_SIZE=1024) as song:
+            time.sleep(1)
+            print('Chunk')
+            yield from song
+
+    return StreamingResponse(iter_file(), media_type="audio/mp3")
