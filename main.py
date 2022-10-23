@@ -3,11 +3,19 @@ from fastapi import FastAPI
 from fastapi import WebSocket
 from starlette.responses import StreamingResponse
 from starlette.websockets import WebSocketDisconnect
-
+from fastapi.middleware.cors import CORSMiddleware
 from music import get_song
 
 app = FastAPI()
 
+# TODO: find out how cors should be handled
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 @app.websocket("/ws")
 async def websocket_endpoint(websocket: WebSocket):
@@ -27,7 +35,7 @@ async def websocket_endpoint(websocket: WebSocket):
 
 
 @app.get('/audio')
-def get_audio():
+async def get_audio():
 
     def iter_file():
         with get_song('Here Comes A Big Black Cloud!! - Graverobbin.mp3', CHUNK_SIZE=1024) as song:
