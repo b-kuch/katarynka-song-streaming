@@ -4,7 +4,7 @@ version = "0.1.0"
 description = ""
 authors = ["b-kuch <58431879+b-kuch@users.noreply.github.com>"]
 readme = "README.md"
-packages = [{include = "song_streaming"}]
+packages = [{include = "streaming", from = "src" }]
 
 [tool.poetry.dependencies]
 python = "^3.10"
