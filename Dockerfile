@@ -1,20 +1,24 @@
+FROM python:3.11 as requirements-stage
+
+WORKDIR /tmp
+
+RUN pip install poetry
+
+COPY ./pyproject.toml ./poetry.lock* /tmp/
+
+RUN poetry export -f requirements.txt --output requirements.txt --without-hashes
+
 FROM python:3.11
 
 WORKDIR /code
 
-RUN pip install poetry
+COPY --from=requirements-stage /tmp/requirements.txt /code/requirements.txt
 
-COPY ./pyproject.toml ./poetry.lock /code/
-
-RUN poetry config virtualenvs.create false
-
-RUN poetry install --no-root
+RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
 
 COPY . /code
 
-RUN poetry install
-
-#CMD ["uvicorn", "src.streaming.main:app", "--host", "0.0.0.0", "--port", "80"]
+#CMD ["uvicorn", "src.streaming.main:app", "--host", "0.0.0.0", "--port", "8081"]
 
 # If running behind a proxy like Nginx or Traefik add --proxy-headers
  CMD ["uvicorn", "src.streaming.main:app", "--host", "0.0.0.0", "--port", "80", "--proxy-headers"]
