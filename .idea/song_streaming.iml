@@ -7,5 +7,8 @@
     <orderEntry type="jdk" jdkName="Poetry (song_streaming)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="song_details" />
+    <orderEntry type="module" module-name="frontend" />
+    <orderEntry type="module" module-name="api_gateway" />
+    <orderEntry type="module" module-name="main" />
   </component>
 </module>

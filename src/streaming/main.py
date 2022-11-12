@@ -26,8 +26,6 @@ async def get_audio(song_id: str):
 
     def iter_file():
         with get_song(song_id) as song:
-            time.sleep(1)
-            print('Chunk')
             yield from song
 
     return StreamingResponse(iter_file(), media_type="audio/mp3")
