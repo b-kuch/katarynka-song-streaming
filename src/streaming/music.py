@@ -2,7 +2,7 @@ from functools import partial
 
 CHUNK_SIZE=1024
 
-CATALOG_PATH = r'./songs/'
+CATALOG_PATH = r'/songs/'
 
 
 class get_song:

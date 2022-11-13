@@ -18,7 +18,7 @@ app.add_middleware(
 
 @app.get('/')
 async def hello():
-    return {'hello': 'world'}
+    return {'hello': 'song_streaming'}
 
 
 @app.get('/audio/{song_id}')
