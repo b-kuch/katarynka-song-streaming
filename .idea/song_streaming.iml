@@ -11,5 +11,6 @@
     <orderEntry type="module" module-name="api_gateway" />
     <orderEntry type="module" module-name="main" />
     <orderEntry type="module" module-name="data" />
+    <orderEntry type="module" module-name="katarynka" />
   </component>
 </module>

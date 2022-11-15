@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/../api_gateway/.idea/api_gateway.iml" filepath="$PROJECT_DIR$/../api_gateway/.idea/api_gateway.iml" />
       <module fileurl="file://$PROJECT_DIR$/../data/.idea/data.iml" filepath="$PROJECT_DIR$/../data/.idea/data.iml" />
       <module fileurl="file://$PROJECT_DIR$/../frontend/.idea/frontend.iml" filepath="$PROJECT_DIR$/../frontend/.idea/frontend.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../katarynka/.idea/katarynka.iml" filepath="$PROJECT_DIR$/../katarynka/.idea/katarynka.iml" />
       <module fileurl="file://$PROJECT_DIR$/../main/.idea/main.iml" filepath="$PROJECT_DIR$/../main/.idea/main.iml" />
       <module fileurl="file://$PROJECT_DIR$/../song_details/.idea/song_details.iml" filepath="$PROJECT_DIR$/../song_details/.idea/song_details.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/song_streaming.iml" filepath="$PROJECT_DIR$/.idea/song_streaming.iml" />

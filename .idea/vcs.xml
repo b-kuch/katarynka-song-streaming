@@ -4,6 +4,7 @@
     <mapping directory="$PROJECT_DIR$/../api_gateway" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../data/scripts" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../frontend" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../katarynka" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../main" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../song_details" vcs="Git" />
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
