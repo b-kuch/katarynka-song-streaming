@@ -1,8 +1,14 @@
 from functools import partial
 
-CHUNK_SIZE=1024
+CHUNK_SIZE = 1024
 
 CATALOG_PATH = r'/songs/'
+
+
+def get_song2(file_name):
+    file_path = CATALOG_PATH + file_name
+    with open(file_path, 'br') as f:
+        return f.read()
 
 
 class get_song:
