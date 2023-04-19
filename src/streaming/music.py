@@ -1,6 +1,6 @@
 from functools import partial
 
-CHUNK_SIZE = 1024
+CHUNK_SIZE = 1024 * 50
 
 CATALOG_PATH = r'/songs/'
 

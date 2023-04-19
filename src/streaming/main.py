@@ -28,5 +28,5 @@ async def get_audio(song_id: str):
         with get_song(song_id) as song:
             yield from song
 
-    # return StreamingResponse(iter_file(), media_type="audio/mp3")
-    return Response(content=get_song2(song_id), media_type="audio/mp3")
+    return StreamingResponse(iter_file(), media_type="audio/mp3")
+    # return Response(content=get_song2(song_id), media_type="audio/mp3")
