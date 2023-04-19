@@ -1,6 +1,7 @@
+import os.path
 from functools import partial
 
-CHUNK_SIZE = 1024 * 50
+CHUNK_SIZE = 1024 * 256
 
 CATALOG_PATH = r'/songs/'
 
@@ -9,6 +10,11 @@ def get_song2(file_name):
     file_path = CATALOG_PATH + file_name
     with open(file_path, 'br') as f:
         return f.read()
+
+
+def file_size(file_name):
+    file_path = CATALOG_PATH + file_name
+    return os.path.getsize(file_path)
 
 
 class get_song:

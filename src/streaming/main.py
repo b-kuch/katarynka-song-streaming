@@ -2,7 +2,7 @@ import time
 from fastapi import FastAPI, Response
 from starlette.responses import StreamingResponse
 from fastapi.middleware.cors import CORSMiddleware
-from src.streaming.music import get_song, get_song2
+from src.streaming.music import get_song, get_song2, file_size
 
 app = FastAPI()
 
@@ -23,10 +23,10 @@ async def hello():
 
 @app.get('/audio/{song_id}')
 async def get_audio(song_id: str):
-
     def iter_file():
         with get_song(song_id) as song:
             yield from song
 
-    return StreamingResponse(iter_file(), media_type="audio/mp3")
+    size = file_size(song_id)
+    return StreamingResponse(iter_file(), media_type="audio/mp3", headers={'Content-Length': str(size)})
     # return Response(content=get_song2(song_id), media_type="audio/mp3")
