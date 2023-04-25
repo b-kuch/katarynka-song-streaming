@@ -1,8 +1,8 @@
 import time
-from fastapi import FastAPI, Response
+from fastapi import FastAPI
 from starlette.responses import StreamingResponse
 from fastapi.middleware.cors import CORSMiddleware
-from src.streaming.music import get_song, get_song2, file_size
+from src.streaming.music import get_song, file_size
 
 app = FastAPI()
 
